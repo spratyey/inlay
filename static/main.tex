@@ -1,0 +1,408 @@
+%%
+%% This is file `sample-sigconf-authordraft.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `all,proceedings,bibtex,authordraft')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-sigconf-authordraft.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%% The first command in your LaTeX source must be the \documentclass
+%% command.
+%%
+%% For submission and review of your manuscript please change the
+%% command to \documentclass[manuscript, screen, review]{acmart}.
+%%
+%% When submitting camera ready or to TAPS, please change the command
+%% to \documentclass[sigconf]{acmart} or whichever template is required
+%% for your publication.
+%%
+%%
+\documentclass[sigconf]{acmart}
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+\copyrightyear{2026}
+\acmYear{2026}
+\setcopyright{cc}
+\setcctype{by}
+\acmConference[CHI EA '26]{Extended Abstracts of the 2026 CHI Conference on Human Factors in Computing Systems}{April 13--17, 2026}{Barcelona, Spain}
+\acmBooktitle{Extended Abstracts of the 2026 CHI Conference on Human Factors in Computing Systems (CHI EA '26), April 13--17, 2026, Barcelona, Spain}
+\acmDOI{10.1145/3772363.3799065}
+\acmISBN{979-8-4007-2281-3/2026/04}
+
+
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{INLAY: Preemptive, In-Context Intelligence for Casual Web Browsing}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Pratyay Suvarnapathaki}
+\email{t-pratyays@microsoft.com}
+\affiliation{%
+  \institution{Microsoft Research}
+  \city{Bengaluru}
+  \country{India}
+}
+
+\author{Adithya S. Kolavi}
+\email{t-akolavi@microsoft.com}
+\affiliation{%
+  \institution{Microsoft Research}
+  \city{Bengaluru}
+  \country{India}
+}
+
+\author{Harsh Vijay}
+\email{havijay@microsoft.com}
+\affiliation{%
+  \institution{Microsoft Research}
+  \city{Bengaluru}
+  \country{India}
+}
+
+\author{Mayukh Das}
+\email{mayukhdas@microsoft.com}
+\affiliation{%
+  \institution{M365 Research, Microsoft}
+  \city{Bengaluru}
+  \country{India}
+}
+
+\author{Ajay Manchepalli}
+\email{ajayma@microsoft.com}
+\affiliation{%
+  \institution{Microsoft Research}
+  \city{Bengaluru}
+  \country{India}
+}
+
+\author{Venkata N. Padmanabhan}
+\email{padmanab@microsoft.com}
+\affiliation{%
+  \institution{Microsoft Research}
+  \city{Bengaluru}
+  \country{India}
+}
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+\renewcommand{\shortauthors}{Suvarnapathaki et al.}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+AI assistance in browsers often depends on explicit invocation, which is effective for well-defined tasks but imposes significant overhead during exploratory `casual' browsing where intent is implicit or latent. We introduce Inlay, a preemptive \textbf{IN}telligence \textbf{LAY}er that bridges the intent-action gap herein by proactively embedding AI-driven insights and cues directly within webpages. Grounded in Information Foraging Theory, Inlay enhances `information scents' by shifting users from high-effort query formulation to low-effort intent confirmation while preserving user agency. Our preliminary user study (N=12) provides early signals that Inlay's context-aware interventions may anticipate emergent needs and encourage deeper exploration while sustaining foraging flow. Our findings suggest that proactive augmentation can transform browsing from command-driven interaction to collaborative AI-assisted exploration.
+\end{abstract}
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10003120.10003121.10003124.10010868</concept_id>
+       <concept_desc>Human-centered computing~Web-based interaction</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10010147.10010178</concept_id>
+       <concept_desc>Computing methodologies~Artificial intelligence</concept_desc>
+       <concept_significance>300</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Human-centered computing~Web-based interaction}
+\ccsdesc[300]{Computing methodologies~Artificial intelligence}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{Proactive Artificial Intelligence, AI-assisted Browsing, Contextual Web, Mixed-Methods User Study}
+%% A "teaser" image appears between the author and affiliation
+%% information and the body of the document, and typically spans the
+%% page.
+% \begin{teaserfigure}
+%   \includegraphics[width=\textwidth]{sampleteaser}
+%   \caption{Seattle Mariners at Spring Training, 2010.}
+%   \Description{Enjoying the baseball game from the third-base
+%   seats. Ichiro Suzuki preparing to bat.}
+%   \label{fig:teaser}
+% \end{teaserfigure}
+
+
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+\section{Introduction}
+
+Web browsing exemplifies human decision-making under constraints, where each click balances cognitive effort against uncertain information gain. Augmenting this environment with LLM-driven assistance promises to radically enhance the efficiency and ease of information-seeking across the diverse spectrum of browser-based experiences. Yet, current systems herein (e.g., Copilot-in-Edge \cite{Edge}, Perplexity Comet \cite{Comet}) have converged on a singular interaction paradigm: deliberate invocation by the user within a separate UI substrate (typically a `sidebar'). 
+
+While seemingly effective for goal-oriented tasks, this reactive model imposes cognitive overhead~\cite{ucs} during `casual browsing,'~\cite{casual, search} (meandering, serendipitous information seeking) where intent is often implicit or latent, thereby forcing users to \emph{prematurely satisfice}, i.e. settle for subpar results to avoid the effort of context switching, missing opportunities for deeper engagement.\\
+
+We argue that as agentic capabilities mature, the browser interface must evolve beyond this reactive status quo to address the above limitation. We introduce Inlay as an early provocation herein, positioned \emph{diametrically opposite} to the current paradigm: an in-page intelligence layer that proactively bridges the gap between latent intent and action. Instead of awaiting invocation, Inlay proactively embeds contextually relevant suggestions as `foraging cues' for the user directly within the webpage. This allows users to confirm or dismiss AI assistance in-situ, drastically reducing information foraging costs while preserving user agency. 
+
+We operationalize this paradigm as a Chromium extension designed to augment, rather than replace, existing browser agents. This work explores the design and efficacy of this new paradigm. The contributions of the current work are as follows: \\
+
+% \vspace{-0.3em}
+\begin{enumerate}
+    \item \textbf{Design Principles} for preemptive, AI-assisted information foraging in casual browsing;
+    \item \textbf{The Inlay System}, comprising browser DOM parsing, LLM-based intent inference, and non-destructive overlay injection; and
+    \item \textbf{Insights} from a small-scale exploratory user study, suggesting that context-aware proactivity can anticipate emergent needs and deepen exploration while sustaining user agency.
+\end{enumerate}
+\newpage
+\section{Related Work}
+% \subsection{Casual Browsing as Information Foraging}
+\textit{Browsing as a Foraging Activity.} 
+\label{sec: foraging}The Information Foraging Theory (IFT) view of web browsing models it as a cost-reward optimization problem under bounded rationality~\cite{IFT} in which information seeking is akin to animals' foraging patterns. Users follow \emph{information scent}, in the form of cues like headings and links that signal value, exploiting \emph{patches} (websites) until diminishing returns trigger them to explore elsewhere \cite{explo3}. This posits humans as \emph{satisficers} who seek `good enough' solutions within cognitive and temporal constraints~\cite{Simon}. Consequently, web browsing is an adaptive strategy, i.e. an exploration-exploitation tradeoff between staying within a current patch versus seeking new information sources~\cite{Explo, explo2}. An imbalance herein triggers premature satisficing, where users tend to give up on exploration and settle for subpar outcomes when facing cognitive overload and time pressure~\cite{AgostoYoung, satisficing}. \\
+
+
+% \subsection{AI Assistance in Browsing}
+\textit{Browser-based AI.} 
+\label{sec: aibrowsers}
+Agentic automation systems seek to reduce the manual effort involved in foraging, compressing multi-step browsing workflows into single-prompt instructions. This capability is now ubiquitous, available through consumer-facing `AI browsers'~\cite{Edge, Comet, dia} and developer-focused cloud solutions ~\cite{browserbase, browseruse2025}. Parallelly, recent CHI scholarship ~\cite{prism, orca} has leveraged these developments, innovating on Human-AI collaboration paradigms to plan and visualize intent-driven foraging flows, as well as organize and analyse the extracted information patches therein. 
+
+Predominantly however, these systems and studies tend to adhere to the aforementioned \textit{reactive invocation} paradigm, requiring users to pause their browsing, divert attention to a separate pane, and explicitly command an agent. This creates a persistent cognitive overhead~\cite{ucs, gulf} owing to: (a) \textit{initiation friction}, where the user must remember to divert attention from the content to the tool; and (b) \textit{cognitive translation friction}, forcing the user to formalize implicit, emergent intent into explicit prompts. This interaction overhead risks fragmenting the foraging loop, diminishing opportunities for serendipitous discovery and subverting the contextual grounding essential to casual browsing.\\
+
+
+
+\textit{Proactive Agentic Systems.}
+\label{sec:proact}
+Recognizing the burden of explicit instruction, recent AI research also explores proactive agents that anticipate user needs in varied forms, including human-in-the-loop UI automation agents~\cite{hitl}, data-driven proactive agents spanning various productivity tasks~\cite{lu2024proactive, alert, patat}, and programming assistant agents ~\cite{codellaborator}. These agents, however, are geared toward the end-to-end automation of tasks that have an explicit end goal or success criterion. In the open-ended context of casual browsing, a truly effective proactive system ought to focus on lowering the initiation barrier specifically, by offering context-aware suggestions aligned with probable user intent without hijacking user agency by over-automating the process.
+
+\begin{figure*}[hpt]
+    \centering
+    \includegraphics[width=\linewidth]{Newhero.pdf}
+    \caption{The three-stage pipeline of Inlay described in Section 3.2, with the resultant UI overlay displayed on the right, as described in Section 3.1. Inlay manifests as a dismissible(a) overlay on top of the current webpage with a key insight at the top(g), and suggestions of types floating(b), in-context(c) and in-line(d). On click, the expanded view displays the category(e) of the action, which can then be delegated(f) to the browser's inbuilt AI Agent.}
+    % \begin{description}
+    %     \item[] 
+    % \end{description}
+    \label{fig:hero}
+    \vspace{-1.0em}
+\end{figure*}
+
+\section{Approach}
+% Inlay operationalizes its preemptive augmentation paradigm via a foraging-theoretic framework, outlining principles for AI assistance as ambient information scent, and a three-stage technical pipeline implemented as a browser extension.
+
+\subsection{Interaction Principles}
+Inlay's design departs from traditional agentic interfaces. Grounded in IFT, it treats AI-generated suggestions as \emph{information scent cues}, as opposed to commands or queries, to lower exploitation costs within a webpage (information patch~\cite{IFT}) while preserving the user's foraging role.
+
+% \subsubsection{Preemptive Assistance}
+% Classic information foraging posits users assess patch value via ambient cues (e.g., headings, links) before deciding to exploit or abandon. Inlay extends this principle by algorithmically \emph{generating} contextually-relevant scent cues on webpages. Instead of awaiting user invocation (see `initiation friction' in Section \ref{sec: aibrowsers}), Inlay's client-side module activates automatically on page load and surfaces its suggestions. For example, on a product review page, Inlay might add a cue to "Compare with competing models" by a spec table, saving the costly navigation to a separate search patch. This preemptive deployment reduces initiation friction to zero, directly addressing the satisficing behavior~\cite{AgostoYoung}, and also helps surface potential actions the user may not have even considered by themselves.
+
+\subsubsection{Preemptive Assistance as Mixed-Initiative Design}
+IFT posits that users assess patch value via ambient cues (e.g., headings, links) before deciding to exploit or abandon. Inlay extends this principle by operationalizing Horvitz's vision of an ``elegant coupling of automated services with direct manipulation''~\cite{horvitz1999}. 
+Inlay's client-side module activates preemptively on page load and strictly limits its role to generating \emph{potential} foraging cues (scents). This allows both, the user and the AI agent to play to their strengths: the agent assumes the computational burden of scanning and assessing on-page information, while the human remains in the driver's seat, retaining the executive authority to act on or ignore these cues.
+For example, as the user scans through a product review page, Inlay might surface a cue to ``Compare with competing models'' adjacent to a spec table; similarly, on a wiki about a space mission, it may suggest exploring related missions and their outcomes. This preemptive deployment inherently reduces initiation friction to zero, directly addressing the main factor contributing to premature satisficing behavior~\cite{AgostoYoung}. Additionally, there is the prospect of serendipity, with Inlay surfacing latent lines of inquiry and potential actions that the user may not have been able to independently formulate.
+
+\subsubsection{Scent Taxonomy and Contextual Placement}
+\label{sec:scent_granularity}
+Not all scents are equally legible. To combat cognitive translation friction when users have vague goals and lack domain-specific vocabulary, Inlay employs a constrained taxonomy: \emph{\{compare, verify, explain, extract, predict, uncover\}}. Each maps to a recurrent exploitation strategy; e.g., a \emph{compare} widget may appear by alternatives, a \emph{verify} widget by a factual claim. \\
+Scent efficacy hinges on proximity to the relevant element. Inlay employs four placement modalities for different attentional gradients: \emph{the key insight banner} (top of viewport, Fig.\ref{fig:hero} label `g') offers a high-level assessment for rapid scanning. \emph{Inline suggestions} (in text flow, Fig.\ref{fig:hero} label `d') appear by paragraphs/entities for specific actions. \emph{In-context widgets} attach to discrete DOM elements (Fig.\ref{fig:hero} label `c') with highlighting, preserving context. Finally, \emph{floating widgets} (Fig.\ref{fig:hero} label `b') persist for page-wide workflows (e.g., "Generate article digest") untied to a single element. This tiered placement matches scent intensity to relevance, with hyper-local cues for fine-grained exploitation and ambient cues for holistic exploration.
+
+\subsubsection{Agency-Preserving Interaction Model}
+\label{sec:agency}
+Agentic AI risks automating sensemaking and disengaging users (see Section \ref{sec:proact}). Inlay mitigates this by design, by framing its suggestions as \emph{low-friction cues}. This model allows the user to either act on a suggestion by externalizing an implicit intent to be passed to a downstream agent for execution (Fig. \ref{fig:hero} label `f'), or simply dismiss parts of, or the entire overlay (Fig. \ref{fig:hero} label `a') and continue their original foraging trajectory unimpeded. This approach operationalizes Yun et al.'s human-in-the-loop foraging principles~\cite{hitl}, but tailored to the latent-intent case of casual browsing: the system proposes but the user decides, ensuring the locus of control and cognitive benefits of active exploration remain with the human forager.
+
+
+\subsection{System Architecture and Implementation}
+We have implemented Inlay as a Chromium extension with a Python-FastAPI service layer, consisting of a three-stage pipeline (\autoref{fig:hero}) which triggers only after the page has fully loaded, executing asynchronously on a background thread to ensure zero impact on page load times. Once LLM inference is complete, the Inlay interface materializes dynamically over the live DOM without requiring a page refresh, seamlessly overlaying context-aware cues onto the user's active view. It is engineered for agent-agnostic compatibility; its delegate pathway presently uses the enterprise tier of Microsoft's Edge Copilot as the downstream agent, but can be re-targeted to any `AI Browser' agent.
+
+\subsubsection{Stage One: Proactive Context Ingestion}
+The pipeline initiates automatically post page load. A client-side module uses rule-based logic to distill the primary content, reducing LLM payload size by \textasciitilde70\% compared to raw DOM serialization. All processing occurs client-side, with PII removed to preserve privacy. The resulting JSON payload contains the distilled text and essential metadata, along with a base64-encoded screenshot of the whole webpage. A transient progress indicator with a cancel button ensures user control over this preemptive step.
+
+\subsubsection{Stage Two: Intent Prediction and Schema-Enforced Suggestion Generation}
+The payload is sent to the server-side API, which first classifies the page (e.g. `e-commerce', `article') and injects a vertical-specific addendum into the prompt, guiding the model to prioritize relevant actions (e.g. uncover hidden fees on e-commerce, verify claims in articles). The resultant payload is fed to a multimodal LLM (GPT-4o). First, the model generates a candidate slate of suggestions and a key insight (see Section \ref{sec:scent_granularity}). Second, a separate LLM-as-a-judge call ranks this slate for utility and novelty, selecting the final top-N set. This generation is strictly controlled using model-native JSON mode, and validated against a rigid Pydantic schema to enforce type correctness and enum membership (e.g., category $\in$ {compare, verify, ...}).
+
+\subsubsection{Stage Three: Heuristic-Based UI Injection}
+The client-side injection module renders the final list of suggestions into a non-destructive shadow DOM overlay. For each suggestion, a heuristic-based anchor search traverses the DOM tree to find the most contextually relevant element based on its content pattern and semantic priority. This is the interface presented to the user. User interaction follows two pathways: a \emph{delegate pathway} and a dismiss pathway, as detailed in Section \ref{sec:agency}, ensuring the system's primary constraint, preservation of user agency, is satisfied.
+
+\section{Exploratory User Study}
+
+% \subsection{Study Design and Participants} We conducted a mixed-methods exploratory user study with N=12 working professionals (8 in technical roles and 4 in tech-adjacent functions, convenience-sampled) who all regularly use the enterprise version of Microsoft Edge Copilot. Sessions began with a 5-minute Inlay system tutorial, then a 20-minute unsupervised, freeform (non-work-related) browsing session with page visits and click actions recorded with explicit consent, followed by a post-task questionnaire (5-point Likert, see Fig. \ref{fig:boxplot}) with a semi-structured interview thereafter probing specific moments of interaction with the Inlay interface. This design aimed to capture granular insights regarding the following research questions: \textbf{(RQ1)} How the in-page embedding of cues influence the user's perceived utility as well as distraction; \textbf{(RQ2)} The extent to which a preemptive system can preserve perceived user agency and control; and \textbf{(RQ3)} How proactive cues impact the nature of exploration and the externalization of latent intent during casual browsing loops.
+
+\subsection{Study Design and Participants} We conducted a mixed-methods exploratory user study with N=12 working professionals (8 in technical roles and 4 in tech-adjacent functions, convenience-sampled) who all regularly use the enterprise version of Microsoft Edge Copilot. Sessions began with a 5-minute tutorial, then a 20-minute unsupervised, freeform (non-work-related) browsing session with page visits and clicks recorded with explicit consent, followed by a post-task questionnaire (5-point Likert, see Fig. \ref{fig:boxplot}) with a semi-structured interview thereafter probing specific moments of interaction. The following Evaluation Goals (EGs) reflect the exploratory nature of the study:
+\begin{itemize}
+    \item \textbf{(EG1)} To what extent do in-page cues provide perceived utility without undue disruption? (Assessed via Likert items Q1--Q3, Q8 and floating-widget collapse events.)
+    \item \textbf{(EG2)}  Does preemptive surfacing of cues preserve perceived user agency? (Assessed via Q4 and interview probes.)
+    \item  \textbf{(EG3)} How do proactive cues shape exploration and the externalization of latent intent? (Assessed via Q5--Q7, delegate/dismiss ratios in interaction logs, and interview probes on serendipity.)
+    
+\end{itemize}
+    
+ 
+
+
+\begin{figure*}[ht]
+    \includegraphics[width=\linewidth]{fig2.pdf}
+    \caption{(Left) A box plot depicting the participants' responses, on a 5-point Likert scale, to the post-session questionnaire; (Right) {A temporal ridge plot of interactions.} The upper panel shows per-participant (P1-P12) stacked normalized-density strips representing the temporal distribution of Delegate (yellow), Expansion (blue), and Dismissal (red) events. The lower panel aggregates these into an Activity Density (smoothed probability distribution of interactions -- blue) and Rolling Event Rate (the aggregate event count within a sliding temporal window -- overlaid red dashes), illustrating the shift from initial exploration to peak and sustained engagement. }
+    % \begin{description}
+    % \end{description}
+    \label{fig:boxplot}
+    \vspace{-1.5em}
+\end{figure*}
+
+\subsection{Findings}
+
+Our analysis triangulates click logs (N=362 interaction events), Likert-scale responses across eight items (Q1--Q8), and semi-structured interviews. We note that interaction logs primarily capture engagement patterns. They do not, on their own, establish comparative preference over alternatives (e.g., sidebar agents) or demonstrate improved browsing outcomes. We rely on interview data to contextualize and qualify these behavioral signals. Browser history telemetry confirms that sessions spanned diverse site typologies, including news articles, blogs, technical documentation, and e-commerce platforms.
+
+\subsubsection{Adoption and Habituation}
+Engagement with Inlay increased over the duration of the session (see Fig. \ref{fig:boxplot}, right side). Interaction frequency rose from 65 total events (aggregate over all users) in the first quarter of the browsing session to 108 in the third quarter and sustained at that level till the end of the session, suggesting steady habituation to Inlay's presence. Across the 12 participants, the system achieved a high utility signal, with a $\sim$5:1 ratio of delegated actions to dismissals (233 delegates vs.\ 47 dismissals). 
+
+This data supports our core hypothesis: lowering initiation friction encourages users to offload cognitive effort more frequently as trust in the system builds. However, we cannot rule out that some delegation reflects novelty or `try-the-feature' behavior inherent to first exposure. Qualitatively, several participants' interview responses attribute delegation to genuine friction reduction rather than curiosity alone. P4 noted, \textit{``I found it to be good to have things instead of activating Copilot for everything,''} framing Inlay as a workflow improvement over an existing AI browsing habit. Similarly, P8 remarked that Inlay was \textit{``giving me options that were the logical next steps for my reading. I hadn't really thought about the next step, but it gave me those options, so it helped reduce my effort there,''} pointing to perceived cognitive offloading rather than novelty exploration.
+
+\subsubsection{Interaction Preference and Agency}
+Participants reported a strong preference for Inlay's in-context model over traditional sidebar agents ($Q6: M=4.3, SD=0.5$). Crucially, this proactivity did not come at the cost of perceived agency ($Q4: M=4.7, SD=0.5$, the highest rated Likert question). While we interpret this favorably, the absence of a controlled baseline means this reflects absolute perceived agency with Inlay, not a relative comparison against an alternative paradigm.
+
+Interview data indicates this balance was achieved by the on-page and non-blocking nature of the UI. As P1 noted, \textit{``I feel like I can just browse on my own, while it (Inlay) makes sure I don't miss anything''}. Users viewed Inlay less as a tool to be commanded and more as a collaborative partner, with P10 noting \textit{``...when I usually say to Copilot `hey i want to extract xyz from a page', my prompt might not be properly framed. So inlay giving suggestions that can be delegated over to it helped''}. The ability to seamlessly delegate a suggested action allowed users to maintain their foraging flow without the context-switching cost of prompt formulation.
+
+
+
+
+\subsubsection{The `Familiarity Contrast' in Discovery}
+Inlay's ability to promote serendipitous discovery was highly variable ($Q5: M=2.9, SD=1.4$). This high variance points to a {familiarity contrast}: proactivity without the incorporation of explicit user intent is highly valued in unfamiliar domains but redundant in familiar ones. When exploring novel topics, users praised the system for surfacing `unknown unknowns.' P3, reading about math theorems, noted that Inlay offered a counterpoint they \textit{``would not have found''} otherwise, while P6 highlighted how the system guided them through an unfamiliar astronomy page. P11 noted \textit{``I briefly landed on a Japanese language learning website and had no idea what to do ... Inlay helped guide me on where things are.''} Conversely, on familiar `patches', users found cues to be `surface-level.' P1 remarked, \textit{``On Amazon, I know what filters I want... Inlay's suggestions didn't add much value''}. P5 echoed this, noting that on a technical documentation page, suggestions were \textit{``very expected and obvious stuff''}.
+This points to the possibility that future proactive browser agents may need to be context-aware not just of page content, but of the user's expertise and history within particular domains.
+
+
+
+
+\subsubsection{Contextual Placement and Disruption}
+Inlay's `in-line' and `in-context' suggestions were praised for being \textit{``easier to read and follow''} (P5), and we hypothesize this is what resulted in the users rating interaction model preference (versus the Copilot workflow they were familiar with) at (Fig. \ref{fig:boxplot} Q6) $M=4.3$. This validates Inlay's on-page augmentation strategy: embedding scent cues adjacent to relevant DOM elements indeed helped cut down cognitive translation friction. However, `floating' widgets were frequently cited as a source of visual clutter (31 `collapse' events recorded for floating widgets). P12 explicitly requested to \textit{``get rid of that pop up corner stuff,''} preferring the subtle, citation-style cues. 
+
+There also emerged a correlation where users who had such remarks also rated Q3 (Non-disruption) poorly ($Q3: M=3.6, SD=1.1$). We interpret this as a signal about \emph{presentation modality preference} (in-context over floating) rather than as evidence for or against the broader preemptive paradigm itself. This suggests that while the premise of proactive cues appears to resonate with users, cues may need to be spatially bound to the specific DOM elements they concern, rather than floating ambiguously over the content.
+
+
+\section{Limitations, Future Work and Conclusion}
+We interpret our findings as a promising \textit{initial signal} for the Inlay paradigm, given the current study's exploratory design with a small cohort ($N=12$) and limited exposure duration. While controlled studies are required to isolate causal effects on comprehension and retention, the current work does offer favorable early evidence regarding our core premise. Our findings offer preliminary evidence that \textit{preemptive, in-page assistance} can function as a low-overhead, mixed-initiative aid, translating emergent intent into suggestions for the user as well as downstream agents, presenting a viable augmentation to the reactive status quo in AI browsers. The observed preference for in-context cues is consistent with the hypothesis that lowering initiation friction may deepen exploration without compromising perceived agency.
+
+\newpage
+
+We also note several risks inherent to preemptive cues that merit further investigation:
+
+\begin{enumerate}
+
+    \item ~\emph{Visual clutter} from over-surfacing, partially mitigated by our placement strategy and dismiss controls but cited by participants as a concern for floating widgets; 
+    \item ~\emph{Misaligned or surface-level suggestions} that risk eroding trust, particularly in familiar domains (see Section~4.2.3), addressable via personalization and confidence-awareness; 
+    \item ~\emph{Heuristic anchoring brittleness} on dynamic or complex layouts and Single-Page Apps (SPAs), necessitating more robust DOM-matching strategies. 
+\end{enumerate}
+A controlled comparison against the sidebar paradigm and longitudinal exposure beyond a single session constitute critical next steps to isolate causal effects, rule out novelty-driven engagement, and assess the persistence of adoption patterns.\\
+
+Crucially, we posit Inlay primarily as a \textit{design provocation}, a proof-of-concept intended to spark discourse on proactive and on-page AI assistance in browsing. For practical consumer deployment, future iterations must bridge casual and task-oriented browsing by integrating \textit{intent clarification} (to disambiguate vague cues) with robust \textit{agentic action-taking}. Beyond these functional additions, future work must model adaptive intervention timing based on real-time intent and assess longitudinal persistence. Finally, this work also establishes a trajectory for generalizing preemptive, in-context augmentation beyond the desktop to mobile and ubiquitous computing environments.
+
+\newpage
+
+
+
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{acmart}
+
+\appendix
+\newpage
+\section{Post-Session Questionnaire Items (Q1--Q8)}
+\label{app:likert}
+The following eight Likert-scale items were administered immediately after each browsing session. Participants rated each statement on a 5-point scale (1\,=\,Strongly Disagree, 5\,=\,Strongly Agree). Aggregate response distributions are shown in Fig.~\ref{fig:boxplot} (left).
+
+\begin{enumerate}
+    \item[\textbf{Q1}] \textit{Relevance of Proactivity.} ``When Inlay offered a suggestion, it felt relevant to what I was reading or thinking about at that moment.''
+    \item[\textbf{Q2}] \textit{Cognitive Effort.} ``Inlay made my browsing feel more productive and required less mental effort.''
+    \item[\textbf{Q3}] \textit{Disruption.} ``I found Inlay's proactive suggestions to NOT be disruptive or interruptive while I was trying to focus.''
+    \item[\textbf{Q4}] \textit{Agency \& Control.} ``I felt in complete control of my browsing and decision-making process.''
+    \item[\textbf{Q5}] \textit{Discovery \& Foraging Appetite.} ``Inlay's suggestions encouraged me to explore new or different information I would not have looked for on my own.''
+    \item[\textbf{Q6}] \textit{Interaction Model Preference.} ``I prefer Inlay's model of in-context suggestions over switching to a separate browser tab or AI tool to ask a question.''
+    \item[\textbf{Q7}] \textit{Collaboration Model.} ``Using Inlay felt more like collaborating with an intelligent partner than using a passive tool.''
+    \item[\textbf{Q8}] \textit{Contextual Placement.} ``Inlay's suggestions were placed at just the right spot, given the context of the page.''
+\end{enumerate}
+
+\end{document}
+\endinput
+%%
+%% End of file `sample-sigconf-authordraft.tex'.
