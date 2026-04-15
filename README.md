@@ -2,7 +2,7 @@
 
 **Pratyay Suvarnapathaki, Adithya S. Kolavi, Harsh Vijay, Mayukh Das, Ajay Manchepalli, Venkata N. Padmanabhan**
 
-Microsoft Research India | [aipoc@microsoft.com](mailto:aipoc@microsoft.com)  
+Microsoft Research India | [inlay@microsoft.com](mailto:inlay@microsoft.com)  
 ACM CHI Conference on Human Factors in Computing Systems, 2026 | Posters
 
 [![Paper](https://img.shields.io/badge/Paper-PDF-red)](static/pdfs/Camera_Ready_INLAY.pdf) [![Website](https://img.shields.io/badge/Website-Project%20Page-blue)](https://spratyey.github.io/inlay)
